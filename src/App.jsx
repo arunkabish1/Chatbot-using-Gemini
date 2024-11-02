@@ -2,8 +2,8 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { useState } from "react";
 
 export default function App() {
-  const apiKey = "AIzaSyC2AISAl1irgtxwwR1bHcn35gTQYQ-rLak"
-  console.log("API Key:", process.env.REACT_APP_API_KEY);
+  const apiKey = process.env.REACT_APP_HOSTING
+
 
   const genAI = new GoogleGenerativeAI(apiKey);
   const [inputValue, setInputValue] = useState("");
@@ -46,7 +46,7 @@ export default function App() {
         </p>
       </header>
 
-      <main className="flex-1 mt-24 mb-16 p-4">
+      <main className="flex-1 mb-32 mt-24  p-4">
         {promptResponses.map((promptResponse, index) => (
           <div
             key={index}
