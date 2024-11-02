@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { useState } from "react";
 
 export default function App() {
-  const apiKey = process.env.REACT_APP_HOSTING
+  const apiKey = process.env.REACT_APP_API_KEY
 
 
   const genAI = new GoogleGenerativeAI(apiKey);
