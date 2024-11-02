@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { useState } from "react";
-require('dotenv').config()
+
 
 export default function App() {
   const genAI = new GoogleGenerativeAI(
