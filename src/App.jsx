@@ -2,9 +2,8 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { useState } from "react";
 
 export default function App() {
-  const genAI = new GoogleGenerativeAI(
-    process.env.API_KEY
-  );
+  const apiKey = process.env.REACT_APP_API_KEY;
+  const genAI = new GoogleGenerativeAI(apiKey);
   const [inputValue, setInputValue] = useState("");
   const [promptResponses, setpromptResponses] = useState(["Hi there..!"]);
 
@@ -16,7 +15,7 @@ export default function App() {
   };
 
   const getResponseForGivenPrompt = async () => {
-    try { 
+    try {
       // if (!inputValue) {
       //   <h1>"hi there"</h1>
       //   return;
@@ -44,7 +43,7 @@ export default function App() {
           Using Gemini API
         </p>
       </header>
-      
+
       <main className="flex-1 mt-24 mb-16 p-4">
         {promptResponses.map((promptResponse, index) => (
           <div
