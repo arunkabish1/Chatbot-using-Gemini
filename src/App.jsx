@@ -1,7 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { useState } from "react";
 
-
 export default function App() {
   const genAI = new GoogleGenerativeAI(
     process.env.API_KEY
@@ -57,7 +56,7 @@ export default function App() {
         ))}
       </main>
 
-      <footer className="w-full shadow-black shadow-inner p-4 fixed bottom-0 bg-[#48CFCB] rounded-t-full">
+      <footer className="w-full shadow-black shadow-inner p-4 fixed bottom-0 bg-[#48CFCB] rounded-2xl lg:rounded-t-full">
         <div className="flex justify-center">
           <textarea
             className="border  shadow-black shadow-inner  border-gray-500 rounded-full px-4 py-2 w-2/3 md:w-4/5 resize-none"
