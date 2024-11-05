@@ -2,8 +2,8 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { useState } from "react";
 
 export default function App() {
-  const apiKey = process.env.REACT_APP_API_KEY
-
+  const apiKey = import.meta.env.VITE_API_KEY;
+  console.log("API Key:", apiKey);
 
   const genAI = new GoogleGenerativeAI(apiKey);
   const [inputValue, setInputValue] = useState("");
@@ -18,10 +18,6 @@ export default function App() {
 
   const getResponseForGivenPrompt = async () => {
     try {
-      // if (!inputValue) {
-      //   <h1>"hi there"</h1>
-      //   return;
-      // }
       const model = genAI.getGenerativeModel({ model: "gemini-pro" });
       const result = await model.generateContent(
         systemPrompt + "\n\n" + inputValue
