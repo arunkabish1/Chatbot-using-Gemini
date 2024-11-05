@@ -3,8 +3,9 @@ import { useState } from "react";
 
 export default function App() {
   const apiKey = import.meta.env.VITE_API_KEY;
-  console.log("API Key:", apiKey);
-  console.log(import.meta.env);
+  console.log("API Key:", apiKey); // For testing purposes only
+  console.log("All Env Variables:", import.meta.env);
+
   const genAI = new GoogleGenerativeAI(apiKey);
   const [inputValue, setInputValue] = useState("");
   const [promptResponses, setpromptResponses] = useState(["Hi there..!"]);
